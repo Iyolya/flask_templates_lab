@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Upcoming events!</h1>
+    <form action="/add-task" method="post"> 
+        <!-- ADDED -->
+        <label for="title">Name</label>
+        <input type="text" name="title" id="title">
+
+        <label for="start"> date:</label>
+
+<input type="date" id="start" name="trip-start"
+      value="2018-07-22"
+      min="2018-01-01" max="2018-12-31">
+      
+      <label for="title">number of guests</label>
+      <input type="text" number of guests="title" id="title">
+      <label for="description">Description</label>
+        <textarea name="description" rows="2" cols="30"></textarea>
+        <input type="submit" value="Add event">
+    </form>
+        {% for event in events %}
+        <div>
+            <p>
+                {{event.date}}: <b>{{event.event_name}}</b>
+                
+
+            </p>
+        <div>
+        {% endfor%}
+{% endblock %}
+
+
